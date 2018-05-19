@@ -26,7 +26,7 @@
 	function makeVideoDiv(video) {
 		let divEl = document.createElement('div');
 		divEl.setAttribute('class','video-element');
-		let titleEl = document.createElement('h4')
+		let titleEl = document.createElement('p')
 		titleEl.innerHTML = video.title;
 		let imgEl = document.createElement('img');
 		imgEl.setAttribute('src',video.thumbnail);
@@ -35,8 +35,8 @@
 		buttonEl.setAttribute('data-video-id', video.videoId);
 		buttonEl.addEventListener('click', convert);
 
-		divEl.appendChild(titleEl);
 		divEl.appendChild(imgEl);
+		divEl.appendChild(titleEl);
 		divEl.appendChild(buttonEl);
 
 		return divEl;
@@ -52,6 +52,7 @@
 	}
 
 	function convert(e){
+		let that = this;
 		var el = e.currentTarget;
 		let videoId = el.dataset.videoId;
 		console.log("Converting..", videoId);
@@ -60,8 +61,8 @@
 			return response.json();
 		})
 		.then(function(jsonResponse){
-			console.log("download link: ", jsonResponse, el.parentNode);
-			makeDownloadMp3Link(el.parentNode, jsonResponse.downloadUrl);
+			console.log("download link: ", jsonResponse, that);
+			makeDownloadMp3Link(that, jsonResponse.downloadUrl);
 		})
 		.catch(function(error){
 			console.error(error);
@@ -73,6 +74,8 @@
 		downloadMp3Link.innerHTML = 'Download mp3';
 		downloadMp3Link.setAttribute('href', downloadUrl);
 		downloadMp3Link.setAttribute('target', '_blank');
+		parentDiv.innerHTML = "";
+		parentDiv.style.backgroundColor = "#1eade6";
 		parentDiv.appendChild(downloadMp3Link);
 	}
 
