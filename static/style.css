@@ -1,3 +1,97 @@
-.search-bar {
-	width: 500px;
+body{
+    background-color: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.nav-container{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #fff;
+    height: 60px;
+    width: 100%;
+    box-shadow: 0px 2px 4px 0px rgba(163, 163, 163,0.5);
+    z-index: 99;
+}
+.nav-content ul {
+    margin: 12px;
+    padding: 0px;
+    margin-left: 32px;
+}
+.nav-content ul li{
+    display: inline-block;
+    margin-left: 42px;
+}
+#logo{
+    margin: 0px;
+    font-size: 22px;
+    float: left;
+    padding: 5px 5px 5px 60px;
+    color: #7d7d7d;
+}
+#search-form{
+    position: relative;
+    max-width: 656px;
+    display: flex;
+    flex-direction: row;
+}
+#search-form input{
+    font-size: 14px;
+    padding: 10px;
+    width: 360px;
+    border: 1px solid #cccccc;
+}
+#search-btn{
+    border: 1px solid #cccccc;
+    padding: 0px 18px;
+    margin-left: -1px;
+    background-color: #f1f1f1;
+    font-size: 16px;
+    color: #a7a7a7;
+}
+.container{
+    margin: 70px auto;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.video-element{
+    position: relative;
+    width: 220px;
+    height: 250px;
+    margin: 10px;
+    background-color: #fff;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+}
+.video-element:hover{
+    box-shadow: 0px 2px 3px 0px rgba(156,156,156,0.5);
+}
+.video-element img{
+    width: 100%;
+}
+.video-element p{
+    font-size: 14px;
+    margin: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #777;
+}
+.video-element button{
+    width: 100%;
+    padding: 8px 0px;
+    border: 0px;
+    color: #fff;
+    background-color: #0f8e3d;
+    margin-top: 14px;
+    font-size: 14px;
+    outline: none;
+    position: absolute;
+    bottom: 0px;
+}
+.video-element button a{
+    color: #fff;
+    text-decoration: none;
 }
