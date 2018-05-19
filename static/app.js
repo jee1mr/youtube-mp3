@@ -31,7 +31,7 @@
 		let imgEl = document.createElement('img');
 		imgEl.setAttribute('src',video.thumbnail);
 		let buttonEl = document.createElement('button');
-		buttonEl.innerHTML = "Convert to mp3";
+		buttonEl.innerHTML = '<i class="fas fa-cogs"> </i> Convert to mp3';
 		buttonEl.setAttribute('data-video-id', video.videoId);
 		buttonEl.addEventListener('click', convert);
 
@@ -75,7 +75,8 @@
 		downloadMp3Link.setAttribute('href', downloadUrl);
 		downloadMp3Link.setAttribute('target', '_blank');
 		parentDiv.innerHTML = "";
-		parentDiv.style.backgroundColor = "#1eade6";
+		parentDiv.style.backgroundColor = "#0f8e3d";
+		parentDiv.innerHTML = '<i class="fas fa-cloud-download-alt"> </i> ';
 		parentDiv.appendChild(downloadMp3Link);
 	}
 
